@@ -3,6 +3,7 @@
 </h4>
 <p>
 		<%= @row['content'] %><br/>
+		<a href="/people/<%= @row['author'] %>"><%= @row['author'] %></a><br/>
 		<%= @row['created_date'] %><br/> 
 		<hr/>
 </p>
@@ -17,7 +18,8 @@
 
 	<% @comments.each do |com| %>
 		<%= com["content"] %><br/>
-		<%= com["created_date"] %><br/>
+		<a href="/people/<%= com['author'] %>" style="font-size: 75%; color: #888"><%= com["author"] %></a><br/>
+		<span style="font-size: 75%; color: #999"><%= com["created_date"] %></span><br/>
 		<hr/>
 	<% end %>
 </div>
@@ -27,6 +29,8 @@
 </h4>
 <p>
 	<form action="/details/<%= @row['id'] %>" method="POST">
+		<input class="form-control" name="author" type="text" placeholder="Введите имя автора" style="width:80%" >
+		<br/>
 		<textarea name='text' class="form-control" rows="6" placeholder="Введите текст комментария..." style="width:80%"></textarea>
 		<br />
 	  <button type="submit" class="btn btn-primary">Add comment</button>

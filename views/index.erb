@@ -4,6 +4,7 @@
 <p>
 	<% @results.each do |post| %>
 		<%= post['content'] %><br/>
+		<a href="/people/<%= post['author'] %>"><%= post['author'] %></a><br/>
 		<%= post['created_date'] %><br/> 
 		<a href="/details/<%= post['id'] %>">Comments</a><br/> <hr/>
 		

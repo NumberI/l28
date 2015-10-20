@@ -1,0 +1,29 @@
+<h4>
+	Posts :
+</h4>
+<p>
+		<% @posts.each do |post| %>
+		<%= post['content'] %><br/>
+		Author name: <%= post['author'] %><br/>
+		<%= post['created_date'] %><br/> 
+		<hr/>
+		<% end %>
+</p>
+<br/>
+<p>
+<div style="margin:0 10% 0;">
+	<h3>
+	<label>
+		Comments:
+	</label>
+	</h3>
+
+	<% @coms.each do |com| %>
+		<%= com["content"] %><br/>
+		<span style="font-size: 75%; color: #888">Post # <%= com["post_id"] %></span><br/>
+		<span style="font-size: 75%; color: #888">Author name: <%= com["author"] %></span><br/>
+		<span style="font-size: 75%; color: #999"><%= com["created_date"] %></span><br/>
+		<hr/>
+	<% end %>
+</div>
+</p>
