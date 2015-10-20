@@ -1,4 +1,4 @@
-#encoding: utf-8
+﻿#encoding: utf-8
 require 'rubygems'
 require 'sinatra'
 require 'sinatra/reloader'
@@ -26,5 +26,8 @@ get '/new' do
 end
 post '/new' do
 	content = params[:text]
+	if content.length <= 0
+		@error = "Введите текст"
+	end
 	erb "#{content}"	
 end
