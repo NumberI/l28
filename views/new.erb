@@ -1,10 +1,10 @@
-<h2>
+﻿<h2>
 	Add new post
 </h2>
 
 <p>
-	<form>
-		<textarea class="form-control" rows="8"></textarea>
+	<form action="/new" method="POST">
+		<textarea name='text' class="form-control" rows="8" placeholder="Введите текст..." style="width:80%"></textarea>
 		<br />
 	  <button type="submit" class="btn btn-primary">Submit</button>
 	</form>
