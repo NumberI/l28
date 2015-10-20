@@ -1,10 +1,34 @@
-<h4>
+﻿<h4>
 	Post details:
 </h4>
 <p>
-
 		<%= @row['content'] %><br/>
 		<%= @row['created_date'] %><br/> 
 		<hr/>
+</p>
+<br/>
+<p>
+<div style="margin:0 10% 0;">
+	<h3>
+	<label>
+		Comments:
+	</label>
+	</h3>
 
+	<% @comments.each do |com| %>
+		<%= com["content"] %><br/>
+		<%= com["created_date"] %><br/>
+		<hr/>
+	<% end %>
+</div>
+</p>
+<h4>
+	Add comment:
+</h4>
+<p>
+	<form action="/details/<%= @row['id'] %>" method="POST">
+		<textarea name='text' class="form-control" rows="6" placeholder="Введите текст комментария..." style="width:80%"></textarea>
+		<br />
+	  <button type="submit" class="btn btn-primary">Add comment</button>
+	</form>
 </p>
